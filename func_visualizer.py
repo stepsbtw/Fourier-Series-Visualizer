@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy import integrate
 
 def f(x):
     if -2 < x < -1:
@@ -24,6 +25,10 @@ def function_visualizer(f, intervals, n=1000):
 def main():
     intervals = [(-2, -1), (-1, 1), (1, 2)]
     function_visualizer(f, intervals)
+    
+    x = np.linspace(-2,2)
+    I = integrate.simpson(f, x)
+    print(I)
 
 if __name__ == "__main__":
     main()
